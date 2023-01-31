@@ -1,3 +1,5 @@
+{{ config(materialized='table') }}
+
 select
     b.id as block_id, c.dispatch_date_time as dispatched, c.ucr_general, c.text_general_code as description
 from {{ ref('blocks') }} b, crimes c where
