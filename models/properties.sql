@@ -39,6 +39,8 @@ select
     year_built,
     zoning,
     building_code_description_new as building_code_description,
-    lat,
-    lng
+    
+    -- yep, they're swapped in the source data
+    lat as lng,
+    lng as lat
 from opa
