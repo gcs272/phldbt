@@ -1,3 +1,5 @@
+{{ config(materialized='table') }}
+
 select
     b.id as block_id, p.*
 from {{ ref('properties') }} p, {{ ref('blocks') }} b where
