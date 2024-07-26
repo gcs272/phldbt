@@ -30,9 +30,9 @@ average_nonviolent_crime as (
 
 select
     amv.block_id,
-    median as median_value,
-    mean as mean_value,
-    properties,
+    amv.median as median_value,
+    amv.mean as mean_value,
+    amv.properties,
     avc.incidents as violent_incidents,
     anc.incidents as nonviolent_incidents
 from average_market_value as amv

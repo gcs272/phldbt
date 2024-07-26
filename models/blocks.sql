@@ -48,7 +48,7 @@ longitudes as (
 
 -- generate a stable id for the lat/lng pair
 select
-    lng,
-    lat,
-    substr(md5(lng::text || '-' || lat::text), 0, 9) as id
+    longitudes.lng,
+    latitudes.lat,
+    substr(md5(longitudes.lng::text || '-' || latitudes.lat::text), 0, 9) as id
 from latitudes, longitudes
