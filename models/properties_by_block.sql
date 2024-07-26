@@ -1,8 +1,8 @@
 {{ config(materialized='table') }}
 
 select
-    b.id as block_id,
-    p.*
+    p.*,
+    b.id as block_id
 from {{ ref('properties') }} as p, {{ ref('blocks') }} as b where
     b.lng <= p.lng
     and p.lng <= b.lng + {{ var('resolution') }}
