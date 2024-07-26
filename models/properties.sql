@@ -5,12 +5,11 @@ select
     basements,
     building_code,
     category_code,
-    central_air = 'Y' as air_conditioned,
     depth,
     exempt_building,
     exempt_land,
-    exterior_condition, 
-    fireplaces, 
+    exterior_condition,
+    fireplaces,
     frontage,
     garage_spaces,
     garage_type,
@@ -39,8 +38,9 @@ select
     year_built,
     zoning,
     building_code_description_new as building_code_description,
-    
-    -- yep, they're swapped in the source data
     lat as lng,
-    lng as lat
+
+    -- yep, they're swapped in the source data
+    lng as lat,
+    central_air = 'Y' as air_conditioned
 from opa
