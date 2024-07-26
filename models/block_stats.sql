@@ -4,16 +4,16 @@ with average_market_value as (
   select block_id, percentile_cont(0.5) within group (order by market_value) as median,
   round(avg(market_value)) as mean,
   count(*) as properties
-  from properties_by_block
+  from {{ ref('properties_by_block') }}
   group by block_id
 ), average_violent_crime as (
   select block_id, count(*) as incidents
-  from crimes_by_block
+  from {{ ref('crimes_by_block') }}
   where cast(ucr_general as int) < 500
   group by block_id
 ), average_nonviolent_crime as (
   select block_id, count(*) as incidents
-  from crimes_by_block
+  from {{ ref('crimes_by_block') }}
   where cast(ucr_general as int) >= 500
   group by block_id
 )
