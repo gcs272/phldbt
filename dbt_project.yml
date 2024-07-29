@@ -31,6 +31,15 @@ clean-targets:         # directories to be removed by `dbt clean`
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 
+models:
+  - name: blocks
+    access: public
+    description: "Block lat/lng definition"
+  - name: crimes_by_block
+    access: public
+  - name: properties_by_block
+    access: public
+
 vars:
   resolution: 0.01
 
