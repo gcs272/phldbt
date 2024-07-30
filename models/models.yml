@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: blocks
+    access: public
+    description: "Block lat/lng definition"
+  - name: crimes_by_block
+    access: public
+  - name: properties_by_block
+    access: public
+
