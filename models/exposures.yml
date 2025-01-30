@@ -1,0 +1,13 @@
+version: 2
+
+exposures:
+  - name: some_exposure
+    label: some test exposure
+    type: dashboard
+    maturity: high
+    url: https://dbtlabs.com/
+    description: a test exposure
+    depends_on:
+      - ref('crimes_by_block')
+    owner:
+      name: Graham
